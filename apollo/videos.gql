@@ -1,0 +1,12 @@
+query Videos {
+  videos {
+    data {
+      id
+      attributes {
+        name
+        url
+        youtube
+      }
+    }
+  }
+}

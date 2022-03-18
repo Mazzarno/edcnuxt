@@ -1,0 +1,20 @@
+query Playlists {
+  playlists {
+    data {
+      id
+      attributes {
+        name
+        videos {
+          data {
+            id
+            attributes {
+              name
+              url
+              youtube
+            }
+          }
+        }
+      }
+    }
+  }
+}

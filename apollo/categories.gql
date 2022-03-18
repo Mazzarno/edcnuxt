@@ -1,0 +1,35 @@
+query Categories {
+  categories {
+    data {
+      id
+      attributes {
+        name
+        articles {
+          data {
+            id
+            attributes {
+              title
+              description
+              published
+              auteur
+              avatar {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              image {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

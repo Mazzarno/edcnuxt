@@ -1,0 +1,29 @@
+query Articles {
+  articles {
+    data {
+      id
+      attributes {
+        title
+        description
+        content
+        auteur
+        avatar {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        published
+        publishedAt
+      }
+    }
+  }
+}
