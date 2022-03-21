@@ -18,7 +18,7 @@ export default {
     ]
   },
   env: {
-    strapiBaseUri: process.env.API_URL || "https://edc-strapi.herokuapp.com"
+    strapiBaseUri: "https://edc-strapi.herokuapp.com"
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -46,7 +46,7 @@ export default {
   apollo: {  
   clientConfigs: {
     default: {
-      httpEndpoint: process.env.BACKEND_URL  ||  "https://edc-strapi.herokuapp.com/graphql"
+      httpEndpoint: "https://edc-strapi.herokuapp.com/graphql"
     }
   }
 },

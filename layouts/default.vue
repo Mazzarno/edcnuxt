@@ -105,13 +105,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-divider class="mr-1" vertical></v-divider>
-        <v-switch
-          class="mt-5"
-          @click="$vuetify.theme.dark = $vuetify.theme.light"
-          prepend-icon="mdi-weather-sunny"
-          append-icon="mdi-weather-night"
-        ></v-switch>
+
         <v-divider class="ml-1" vertical></v-divider>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </v-toolbar-items>
