@@ -194,17 +194,28 @@
 
 <script>
 export default {
- 
   data() {
     return {
       form: false,
       rules: {
-        name: [(val) => (val || "").length > 0 || "Ce champ est obligatoire"],
-        email: (v) => (v || "").match(/@/) || "Entrer une adresse email valide",
+        name: [(val) => (val || '').length > 0 || 'Ce champ est obligatoire'],
+        email: (v) => (v || '').match(/@/) || 'Entrer une adresse email valide',
       },
-    };
+    }
   },
-};
+  head() {
+    return {
+      title: 'Contact',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style></style>

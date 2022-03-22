@@ -693,9 +693,20 @@
 </template>
 
 <script>
-
 export default {
-};
+  head() {
+    return {
+      title: 'Nos Activités',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style></style>

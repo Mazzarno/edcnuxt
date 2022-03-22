@@ -93,7 +93,7 @@ var moment = require('moment')
 export default {
   data() {
     return {
-      api_url: 'https://edc-strapi.herokuapp.com',
+      api_url: /*'http://localhost:1337' || */ 'https://edc-strapi.herokuapp.com',
       articles: [],
       moment: moment,
       swiperOption: {

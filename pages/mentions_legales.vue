@@ -77,30 +77,19 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: "Mentions Légales",
-    titleTemplate: "l’Échappée des Copropriétés ← %s",
-    meta: [
-      {
-        name: "description",
-        content:
-          "L’Echappée des Copropriétés vise à faciliter des projets collectifs en copropriété en agissant sur les dynamiques collectives. Nous aspirons à l’amélioration des conditions de vie dans l’habitat privé, pour et par l’implication des habitant·e·s, en partant toujours de leur parole, leurs besoins, leurs envies.",
-      },
-      {
-        name: "robots",
-        content: "index,follow,all",
-      },
-      {
-        name: "author",
-        content: "Alexis GERMAIN",
-      },
-      {
-        name: "Identifier-Url",
-        content: "https://echappee-copro.org/mentions-legales",
-      },
-    ],
+  head() {
+    return {
+      title: 'Mentions Légales',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
   },
-};
+}
 </script>
 
 <style></style>

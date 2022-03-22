@@ -132,6 +132,7 @@
             </v-row>
           </v-col>
         </v-row>
+        <v-divider class="ma-4 primary"></v-divider>
       </section>
       <v-row class="align-center d-flex justify-center">
         <v-col cols="12" md="8" sm="10">
@@ -160,7 +161,7 @@
             </v-col>
 
             <v-col cols="9">
-              <h1 class="mb-5 text-left titre headline primary--text">
+              <h1 class="my-5 text-left titre headline primary--text">
                 À l’échelle d’un territoire
               </h1>
 
@@ -193,7 +194,9 @@
           </v-row>
         </v-col>
       </v-row>
+
       <section class="bg-action2">
+        <v-divider class="ma-4 primary"></v-divider>
         <v-row class="align-center d-flex justify-center">
           <v-col cols="12" md="8" sm="10">
             <v-row class="justify-center align-center">
@@ -221,7 +224,7 @@
               </v-col>
 
               <v-col cols="9">
-                <h1 class="mb-5 text-left titre headline primary--text">
+                <h1 class="my-5 text-left titre headline primary--text">
                   À l’échelle de l’écosystème de l’habitat privé
                 </h1>
 
@@ -354,7 +357,7 @@
           </p>
         </v-col>
       </v-row>
-      <v-divider class="ma-4 primary"></v-divider>
+
       <v-row class="align-center d-flex justify-center">
         <v-col cols="10">
           <h2 class="text-left my-5 headline primary--text">
@@ -382,8 +385,19 @@
 
 <script>
 export default {
-
-};
+  head() {
+    return {
+      title: 'Notre Vision',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style>

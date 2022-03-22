@@ -1,6 +1,6 @@
 
 <template>
-  <swiper class="swiper" :options="swiperOption">
+  <swiper class="swiper" :pagination="true" :options="swiperOption">
     <swiper-slide>
       <v-img
         :src="require(`@/assets/img/logo/abbe-pierre.png`)"
@@ -205,6 +205,7 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
+
 export default {
   name: 'swiper-example-multiple-slides-per-biew',
   title: 'Multiple slides per view',
@@ -215,23 +216,29 @@ export default {
   data() {
     return {
       swiperOption: {
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        navigation: true,
+        pagination: { clickable: true },
         grabCursor: true,
-        loop: true,
         breakpoints: {
-          1024: {
+          1500: {
             slidesPerView: 6,
             spaceBetween: 90,
           },
-          768: {
+          1024: {
             slidesPerView: 5,
             spaceBetween: 90,
           },
-          640: {
-            slidesPerView: 2,
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 90,
+          },
+          600: {
+            slidesPerView: 3,
             spaceBetween: 90,
           },
           320: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 90,
           },
         },

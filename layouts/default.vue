@@ -1,26 +1,34 @@
 <template>
   <v-app dark>
     <!-- NAV DRAWER -->
-    <v-navigation-drawer dark class="primary" v-model="drawer" right app>
-      <v-img
-        class="my-3 ml-8"
-        :src="require('@/assets/img/logo-nav.png')"
-        :lazy-src="require('@/assets/img/logo-nav.png')"
-        height="80"
-        width="200"
-        size="300px"
-        contain
-        to="/"
-      >
-        <template v-slot:placeholder>
-          <v-row class="fill-height ma-0" align="center" justify="center">
-            <v-progress-circular
-              indeterminate
-              color="grey lighten-5"
-            ></v-progress-circular>
-          </v-row>
-        </template>
-      </v-img>
+    <v-navigation-drawer
+      dark
+      class="primary"
+      v-model="drawer"
+      right
+      app
+      stateless
+    >
+      <NuxtLink to="/">
+        <v-img
+          class="my-6 ml-8"
+          :src="require('@/assets/img/logo-nav.png')"
+          :lazy-src="require('@/assets/img/logo-nav.png')"
+          height="80"
+          width="200"
+          size="300px"
+          contain
+        >
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </NuxtLink>
       <v-divider></v-divider>
       <v-list>
         <v-list-item
@@ -33,7 +41,7 @@
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
+          <v-list-item-content align="start" justify="center">
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
@@ -105,9 +113,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-
-        <v-divider class="ml-1" vertical></v-divider>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+        <v-app-bar-nav-icon @click="drawer = !drawer" />
       </v-toolbar-items>
     </v-app-bar>
     <!-- MAIN -->
@@ -212,17 +218,6 @@
               </h1>
               {{ new Date().getFullYear() }} ~
               <strong>L'ÉCHAPPÉE DES COPROPRIÉTÉS</strong>
-              <p>
-                fait avec
-                <v-icon size="15">mdi-heart</v-icon>&nbsp;par
-                <a
-                  class="font-weight-light caption white--text"
-                  href="https://mazzar.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Mazzar</a
-                >
-              </p>
             </v-card-text>
           </v-col>
 

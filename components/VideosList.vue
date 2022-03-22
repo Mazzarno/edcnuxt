@@ -13,8 +13,8 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <v-card-title class="primary">
-              <h1 class="subtitle-2 white--text">
+            <v-card-title class="primary justify-center">
+              <h1 class="subtitle-1 white--text text-decoration-underline">
                 {{ video.attributes.name }}
               </h1>
             </v-card-title>
@@ -23,8 +23,8 @@
                 :href="video.attributes.youtube"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="mx-5 mb-5 button primary--text"
-                >Voir sur youtube<v-icon color="primary"
+                class="mb-5 button primary--text"
+                >Voir sur youtube<v-icon color="primary" class="ml-3"
                   >mdi-youtube</v-icon
                 ></v-btn
               >

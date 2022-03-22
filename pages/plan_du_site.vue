@@ -13,48 +13,60 @@ export default {
     items: [
       {
         id: 1,
-        name: "Accueil",
+        name: 'Accueil',
       },
 
       {
         id: 8,
-        name: "Nos Activités",
+        name: 'Nos Activités',
       },
       {
         id: 9,
-        name: "Notre Vision",
+        name: 'Notre Vision',
       },
       {
         id: 10,
-        name: "Qui sommes-nous",
+        name: 'Qui sommes-nous',
       },
       {
         id: 11,
-        name: "Blog",
+        name: 'Blog',
       },
       {
         id: 12,
-        name: "Vidéothèques",
+        name: 'Vidéothèques',
       },
       {
         id: 13,
-        name: "Contact",
+        name: 'Contact',
       },
       {
         id: 14,
-        name: "Mentions Légales",
+        name: 'Mentions Légales',
       },
       {
         id: 15,
-        name: "Plan du site",
+        name: 'Plan du site',
       },
       {
         id: 16,
-        name: "404",
+        name: '404',
       },
     ],
   }),
-};
+  head() {
+    return {
+      title: 'Le Plan du site',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style></style>

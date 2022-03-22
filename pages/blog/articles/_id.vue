@@ -9,10 +9,18 @@
     </v-row>
     <v-col cols="12" md="8" sm="10">
       <v-row class="align-center mb-3">
-        <v-avatar >
+        <v-avatar>
           <v-img
-            :src="api_url + articles.data[$route.params.id - 1].attributes.avatar.data[0].attributes.url"
-            :lazy-src="api_url + articles.data[$route.params.id - 1].attributes.avatar.data[0].attributes.url"
+            :src="
+              api_url +
+              articles.data[$route.params.id - 1].attributes.avatar.data[0]
+                .attributes.url
+            "
+            :lazy-src="
+              api_url +
+              articles.data[$route.params.id - 1].attributes.avatar.data[0]
+                .attributes.url
+            "
           >
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
@@ -37,8 +45,16 @@
       <v-row class="my-5 d-flex justify-center">
         <v-col cols="8">
           <v-img
-            :src="api_url +articles.data[$route.params.id - 1].attributes.image.data[0].attributes.url"
-            :lazy-src="api_url + articles.data[$route.params.id - 1].attributes.image.data[0].attributes.url"
+            :src="
+              api_url +
+              articles.data[$route.params.id - 1].attributes.image.data[0]
+                .attributes.url
+            "
+            :lazy-src="
+              api_url +
+              articles.data[$route.params.id - 1].attributes.image.data[0]
+                .attributes.url
+            "
           >
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
@@ -88,16 +104,36 @@ var moment = require('moment')
 export default {
   data() {
     return {
-      api_url: process.env.strapiBaseUri || 'http://localhost:1337',
+      api_url:
+        /*'http://localhost:1337' || */ 'https://edc-strapi.herokuapp.com',
       articles: [],
       moment: moment,
+      title: '',
+      description: '',
     }
+  },
+  mounted() {
+    this.id = this.$route.params.id
+    this.title = this.articles.data[this.id - 1].attributes.title
+    this.description = this.articles.data[this.id - 1].attributes.description
   },
   apollo: {
     articles: {
       prefetch: true,
       query: articlesQuery,
     },
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description,
+        },
+      ],
+    }
   },
 }
 </script>
