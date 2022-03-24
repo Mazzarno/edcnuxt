@@ -660,34 +660,29 @@
           </p>
         </v-col>
       </v-row>
-      <!--  <v-divider class="ma-4 primary"></v-divider>
-      <v-row class="align-center d-flex justify-center">
-        <v-col cols="10">
-          <h1 class="text-left my-5 headline titre primary--text">
-            Découvrez nos projets en cours :
-          </h1>
+      <v-row class="align-center my-5 d-flex justify-center">
+        <v-col cols="12" md="6">
+          <nuxt-link to="/blog">
+            <v-btn class="ma-5" color="primary">Voir le blog</v-btn></nuxt-link
+          >
         </v-col>
-      </v-row>
-  
-      <ArticlesList :articles="categories[0].articles || []"></ArticlesList>
-      <v-divider class="ma-4 primary"></v-divider>
-      <v-row class="align-center d-flex justify-center">
-        <v-col cols="10">
-          <h1 class="text-left my-5 headline titre primary--text">
-            Et nos projets passés :
-          </h1>
-        </v-col>
-      </v-row>
-      <ArticlesList :articles="categories[0].articles || []"></ArticlesList>
-
-      <v-row class="align-center d-flex justify-center">
-        <v-col cols="12">
-          <v-btn to="/blog" class="ma-5" color="primary"
-            >Découvrez tout notre blog</v-btn
+        <v-col cols="12" md="6">
+          <nuxt-link to="/videotheque">
+            <v-btn class="ma-5" color="primary"
+              >Voir la vidéothèque</v-btn
+            ></nuxt-link
           >
         </v-col>
       </v-row>
-      -->
+
+      <v-row class="align-center d-flex justify-center">
+        <v-col cols="12">
+          <nuxt-link to="/">
+            <v-btn class="ma-5 button" color="primary"
+              >Retour à l'accueil</v-btn
+            ></nuxt-link>
+        </v-col>
+      </v-row>
     </section>
   </div>
 </template>

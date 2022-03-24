@@ -1,30 +1,61 @@
 <template>
   <div fluid fill-height v-cloak>
-    <v-row class="justify-center">
-      <v-col cols="12" md="8" sm="10">
-        <h1 class="mt-10 display-1 primary--text text-decoration-underline">
-          LE BLOG
+    <v-row class="justify-center align-center">
+      <v-col cols="12">
+        <h1 class="headline mt-5 primary--text">LE BLOG</h1>
+      </v-col>
+    </v-row>
+    <v-row class="justify-center align-center">
+      <v-col cols="12">
+        <h1 class="headline primary--text">
+          Les {{ categories.data[0].attributes.name }}
         </h1>
-        <div class="d-flex justify-start">
-          <h1 class="mt-10 headline primary--text">
-            Les {{ categories.data[0].attributes.name }}
-          </h1>
-        </div>
       </v-col>
     </v-row>
     <ArticlesList
       :articles="categories.data[0].attributes.articles || []"
     ></ArticlesList>
-    <v-row class="justify-center">
-      <v-col cols="12" md="8" sm="10">
-        <div class="d-flex justify-start">
-          <h1 class="mt-2 headline primary--text">Tout les Articles</h1>
-        </div>
+    <v-divider class="ma-4 primary"></v-divider>
+    <v-row class="justify-center align-center">
+      <v-col cols="12">
+        <h1 class="headline primary--text">Tout les articles</h1>
       </v-col>
     </v-row>
+
     <ArticlesList
       :articles="categories.data[1].attributes.articles || []"
     ></ArticlesList>
+
+    <v-row class="align-center my-5 d-flex justify-center">
+      <v-col cols="12" md="6">
+        <nuxt-link to="/videotheque">
+          <v-btn class="ma-5" color="primary"
+            >Voir la vidéothèque</v-btn
+          ></nuxt-link
+        >
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-btn
+          href="https://www.youtube-nocookie.com/channel/UCWxYK7EayDD5lYdjLSNW-lw/?sub_confirmation=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ma-5"
+          color="primary"
+          >Voir la chaine Youtube
+          <v-icon class="ml-3">mdi-youtube</v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
+
+    <v-row class="align-center d-flex justify-center">
+      <v-col cols="12">
+        <nuxt-link to="/">
+          <v-btn class="ma-5 button" color="primary"
+            >Retour à l'accueil</v-btn
+          ></nuxt-link
+        >
+      </v-col>
+    </v-row>
   </div>
 </template>
 <script>
@@ -54,13 +85,7 @@ export default {
   head() {
     return {
       title: 'Le Blog',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: '',
-        },
-      ],
+      meta: [{ hid: 'robots', name: 'robots', content: 'blog, follow' }],
     }
   },
 }

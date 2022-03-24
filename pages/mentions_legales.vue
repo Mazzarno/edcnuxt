@@ -65,11 +65,11 @@
           un hyperlien en direction de ces sites sans l'autorisation expresse et
           préalable de l'exploitant du site Internet
         </p>
-        <router-link to="/">
+        <nuxt-link to="/">
           <v-btn dark class="btn button ma-5" outlined
             >RETOUR à L'accueil</v-btn
           >
-        </router-link>
+        </nuxt-link>
       </v-col>
     </v-row>
   </v-container>

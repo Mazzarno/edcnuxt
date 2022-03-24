@@ -81,8 +81,8 @@
                 >
               </v-card-actions>
             </div>
-          </v-card></swiper-slide
-        >
+          </v-card></swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </v-col>
   </v-container>
@@ -93,15 +93,33 @@ var moment = require('moment')
 export default {
   data() {
     return {
-      api_url: /*'http://localhost:1337' || */ 'https://edc-strapi.herokuapp.com',
+      api_url:
+        /*'http://localhost:1337' || */ 'https://edc-strapi.herokuapp.com',
       articles: [],
       moment: moment,
       swiperOption: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+        breakpoints: {
+          1500: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          600: {
+            slidesPerView: 1,
+          },
+          500: {
+            slidesPerView: 1,
+          },
+          430: {
+            slidesPerView: 1,
+          },
+          300: {
+            slidesPerView: 1,
+          },
         },
       },
     }

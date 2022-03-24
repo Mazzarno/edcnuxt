@@ -1,13 +1,26 @@
+
+@font-face {
+  font-family: 'WorkSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('~assets/css/WorkSans-Medium.ttf');
+  /* IE9 Compat Modes */
+  src: local(''), url('~assets/css/WorkSans-Medium.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('~assets/css/WorkSans-Medium.woff') format('woff'),
+    /* Modern Browsers */
+    url('~assets/css/WorkSans-Medium.ttf') format('truetype');
+  /* Safari, Android, iOS */
+}
 *,
 :after,
 :before {
     box-sizing: border-box;
 }
-
-.v-application {
-    font-family: $body-font-family, sans-serif !important;
-}
-
+$body-font-family: 'WorkSans' !important;
+$heading-font-family: 'WorkSans' !important;
+$color-pack: false;
+@import '~vuetify/src/styles/styles.sass';
 .png-shadow {
     filter: drop-shadow(1px 1px 1px black);
 }
@@ -154,16 +167,6 @@ html {
     }
 
     /* For desktop: */
-}
-
-.owl-item {
-    display: flex;
-    justify-content: center;
-}
-
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    background: #ff8c00 !important;
 }
 
 html,

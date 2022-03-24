@@ -47,7 +47,7 @@
         </v-list-item>
       </v-list>
       <v-divider></v-divider>
-      <v-row class="ml-3 mt-1">
+      <v-row class="ml-3 mt-1 d-flex align-start justify-start">
         <v-col cols="10">
           <div class="d-flex justify-center align-content-center">
             <a
@@ -56,7 +56,7 @@
               rel="noopener noreferrer"
             >
               <v-btn class="mx-4" dark icon>
-                <v-icon size="24px">mdi-facebook</v-icon>
+                <v-icon size="24px">{{ mdiFacebook }}</v-icon>
               </v-btn>
             </a>
             <a
@@ -65,7 +65,7 @@
               rel="noopener noreferrer"
             >
               <v-btn class="mx-4" dark icon>
-                <v-icon size="24px">mdi-linkedin</v-icon>
+                <v-icon size="24px">{{ mdiLinkedin }}</v-icon>
               </v-btn>
             </a>
             <a
@@ -74,7 +74,7 @@
               rel="noopener noreferrer"
             >
               <v-btn class="mx-4" dark icon>
-                <v-icon size="24px">mdi-youtube</v-icon>
+                <v-icon size="24px">{{ mdiYoutube }}</v-icon>
               </v-btn>
             </a>
           </div>
@@ -113,7 +113,9 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-app-bar-nav-icon @click="drawer = !drawer" />
+        <v-app-bar-nav-icon @click="drawer = !drawer"
+          ><v-icon>{{ mdiMenu }}</v-icon></v-app-bar-nav-icon
+        >
       </v-toolbar-items>
     </v-app-bar>
     <!-- MAIN -->
@@ -124,7 +126,7 @@
     <v-snackbar v-model="snackbar">
       <template v-slot:action="{ attrs }">
         <v-btn text v-bind="attrs" @click="snackbar = false">
-          <v-icon>mdi-close</v-icon>
+          <v-icon>{{ mdiClose }}</v-icon>
         </v-btn>
       </template>
     </v-snackbar>
@@ -187,7 +189,7 @@
                 rel="noopener noreferrer"
               >
                 <v-btn class="mx-4" dark icon>
-                  <v-icon size="24px">mdi-facebook</v-icon>
+                  <v-icon size="24px">{{ mdiFacebook }}</v-icon>
                 </v-btn>
               </a>
               <a
@@ -196,7 +198,7 @@
                 rel="noopener noreferrer"
               >
                 <v-btn class="mx-4" dark icon>
-                  <v-icon size="24px">mdi-linkedin</v-icon>
+                  <v-icon size="24px">{{ mdiLinkedin }}</v-icon>
                 </v-btn>
               </a>
               <a
@@ -205,7 +207,7 @@
                 rel="noopener noreferrer"
               >
                 <v-btn class="mx-4" dark icon>
-                  <v-icon size="24px">mdi-youtube</v-icon>
+                  <v-icon size="24px">{{ mdiYoutube }}</v-icon>
                 </v-btn>
               </a>
             </v-card-title>
@@ -235,6 +237,20 @@
 </template>
 
 <script>
+import {
+  mdiFacebook,
+  mdiLinkedin,
+  mdiYoutube,
+  mdiHome,
+  mdiPresentation,
+  mdiMagnify,
+  mdiBike,
+  mdiBorderColor,
+  mdiVideo,
+  mdiEmailOutline,
+  mdiClose,
+  mdiMenu,
+} from '@mdi/js'
 export default {
   data() {
     return {
@@ -256,39 +272,51 @@ export default {
       message: '',
       snackbar: false,
       drawer: false,
+      mdiFacebook,
+      mdiLinkedin,
+      mdiYoutube,
+      mdiMenu,
+      mdiClose,
+      mdiHome,
+      mdiPresentation,
+      mdiMagnify,
+      mdiBike,
+      mdiBorderColor,
+      mdiVideo,
+      mdiEmailOutline,
       items: [
         {
-          icon: 'mdi-home',
+          icon: `${mdiHome}`,
           title: 'Accueil',
           to: '/',
         },
         {
-          icon: 'mdi-presentation',
+          icon: `${mdiPresentation}`,
           title: 'Nos Activités',
           to: '/activites',
         },
         {
-          icon: 'mdi-magnify',
+          icon: `${mdiMagnify}`,
           title: 'Notre Vision',
           to: '/vision',
         },
         {
-          icon: 'mdi-bike',
+          icon: `${mdiBike}`,
           title: 'Qui sommes nous ?',
           to: '/qui_sommes_nous',
         },
         {
-          icon: 'mdi-border-color',
+          icon: `${mdiBorderColor}`,
           title: 'Le Blog',
           to: '/blog',
         },
         {
-          icon: 'mdi-video',
+          icon: `${mdiVideo}`,
           title: 'La Vidéothèque',
           to: '/videotheque',
         },
         {
-          icon: 'mdi-email-outline',
+          icon: `${mdiEmailOutline}`,
           title: 'Nous Contactez',
           to: '/contact',
         },

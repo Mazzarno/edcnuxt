@@ -234,9 +234,14 @@
       </v-row>
       <v-row class="bg-action2 align-center d-flex justify-center pb-3">
         <v-col cols="12">
-          <v-btn to="/activites" class="ma-5" color="primary">
-            nos activités</v-btn
-          >
+          <nuxt-link to="/activites">
+            <v-btn class="ma-5" color="primary"
+              >nos activités
+              <v-icon size="18" class="ml-3">
+                {{ mdiPresentation }}</v-icon
+              ></v-btn
+            >
+          </nuxt-link>
         </v-col>
       </v-row>
       <v-divider class="ma-4 primary"></v-divider>
@@ -253,8 +258,10 @@
           <v-row align="center" justify="center">
             <v-col class="text-center" cols="12">
               <h1 class="white--text title paralax">NOTRE VISION</h1>
-              <v-btn to="/vision" class="mt-5 primary--text"
-                >EN SAVOIR PLUS</v-btn
+              <nuxt-link to="/vision">
+                <v-btn class="mt-5 primary--text"
+                  >EN SAVOIR PLUS</v-btn
+                ></nuxt-link
               >
             </v-col>
           </v-row>
@@ -276,9 +283,8 @@
           <confiance-list />
         </v-col>
       </v-row>
-      <v-divider class="mx-4 primary"></v-divider>
     </section>
-
+    <v-divider class="mx-4 primary"></v-divider>
     <v-row class="justify-center mt-5">
       <v-col cols="12" md="8" sm="10">
         <v-parallax
@@ -289,8 +295,10 @@
           ><v-row align="center" justify="center">
             <v-col class="text-center" cols="12">
               <h1 class="white--text title paralax">QUI SOMMES-NOUS ?</h1>
-              <v-btn to="/qui_ sommes_nous" class="mt-5 primary--text"
-                >EN APPRENDRE PLUS SUR L'EQUIPE</v-btn
+              <nuxt-link to="/qui_sommes_nous">
+                <v-btn class="mt-5 primary--text"
+                  >EN APPRENDRE PLUS SUR L'EQUIPE</v-btn
+                ></nuxt-link
               >
             </v-col>
           </v-row></v-parallax
@@ -309,8 +317,13 @@
 
       <v-row class="align-center d-flex justify-center">
         <v-col cols="10">
-          <v-btn to="/blog" class="ma-5" color="primary"
-            >Voir tout nos articles</v-btn
+          <nuxt-link to="/blog">
+            <v-btn class="ma-5" color="primary"
+              >Voir tout nos articles
+              <v-icon size="18" class="ml-2 mt-1">{{
+                mdiBorderColor
+              }}</v-icon></v-btn
+            ></nuxt-link
           >
         </v-col>
       </v-row>
@@ -318,7 +331,7 @@
     </section>
     <section class="bg-action3">
       <v-row class="justify-center align-center">
-        <v-col cols="12" data-aos="zoom-in" data-aos-duration="2000">
+        <v-col cols="12">
           <h1 class="headline my-5 primary--text">NOTRE VIDÉOTHÈQUE</h1>
         </v-col>
       </v-row>
@@ -329,9 +342,12 @@
       ></VideosList>
 
       <v-row class="align-center my-5 d-flex justify-center">
-        <v-col cols="12" md="6" data-aos="zoom-in" data-aos-duration="2000">
-          <v-btn to="/videotheque" class="ma-5" color="primary"
-            >Voir toutes nos vidéos</v-btn
+        <v-col cols="12" md="6">
+          <nuxt-link to="/videotheque">
+            <v-btn class="ma-5" color="primary"
+              >Voir toutes nos vidéos
+              <v-icon class="ml-3">{{ mdiVideo }}</v-icon></v-btn
+            ></nuxt-link
           >
         </v-col>
         <v-col cols="12" md="6">
@@ -341,8 +357,8 @@
             rel="noopener noreferrer"
             class="ma-5"
             color="primary"
-            >Voir sur Youtube
-            <v-icon class="ml-3">mdi-youtube</v-icon>
+            >Voir la chaine Youtube
+            <v-icon class="ml-3">{{ mdiYoutube }}</v-icon>
           </v-btn>
         </v-col>
       </v-row>
@@ -351,6 +367,13 @@
 </template>
 
 <script>
+import {
+  mdiVideo,
+  mdiYoutube,
+  mdiMagnify,
+  mdiBorderColor,
+  mdiPresentation,
+} from '@mdi/js'
 import ConfianceList from '../components/confianceList.vue'
 import ArticlesList from '~/components/ArticlesList.vue'
 import VideosList from '~/components/VideosList.vue'
@@ -385,20 +408,28 @@ export default {
   },
   data() {
     return {
+      mdiPresentation,
+      mdiBorderColor,
+      mdiYoutube,
+      mdiVideo,
+      mdiMagnify,
       articles: [],
       videos: [],
       categories: [],
       playlists: [],
+      image: require('@/assets/img/Actions.jpg'),
     }
   },
   head() {
     return {
       title: 'Accueil',
       meta: [
+        { hid: 'robots', name: 'robots', content: 'index, follow' },
+        { hid: 'og:image', property: 'og:image', content: `${this.image}` },
         {
-          hid: 'description',
-          name: 'description',
-          content: '',
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: `${this.image}`,
         },
       ],
     }

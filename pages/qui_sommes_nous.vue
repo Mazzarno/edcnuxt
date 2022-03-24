@@ -117,8 +117,10 @@
       </v-row>
       <v-row class="align-center d-flex justify-center">
         <v-col cols="12">
-          <v-btn to="/videotheque" class="ma-5" color="primary"
-            >Découvrez le projet en roue libre</v-btn
+          <nuxt-link to="/videotheque">
+            <v-btn class="mb-5" color="primary"
+              >Découvrez le projet en roue libre</v-btn
+            ></nuxt-link
           >
         </v-col>
       </v-row>
@@ -186,11 +188,11 @@
         </v-col>
       </v-row>
 
-      <v-row class="my-5 d-flex justify-center">
+      <v-row class="mt-5 d-flex justify-center">
         <v-col cols="8">
           <v-img>
             <template v-slot:placeholder>
-              <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-row class="fill-height" align="center" justify="center">
                 <v-progress-circular
                   indeterminate
                   color="grey lighten-5"
@@ -278,22 +280,30 @@
           </p>
         </v-col>
       </v-row>
-      <!--
-      <v-divider class="ma-4 primary"></v-divider>
-
-      <v-row class="align-center d-flex justify-center">
-        <v-col cols="10">
-          <h1
-            class="text-left my-5 headline primary--text"
-          >Découvrez les articles "Ils·elles parlent de nous"</h1>
-          <v-row class="align-center d-flex justify-center">
-            <v-col cols="12">
-              <v-btn to="/blog" class="ma-5 button" color="primary">Découvrez tout notre blog</v-btn>
-            </v-col>
-          </v-row>
+      <v-row class="align-center my-5 d-flex justify-center">
+        <v-col cols="12" md="6">
+          <nuxt-link to="/blog">
+            <v-btn class="ma-5" color="primary">Voir le blog</v-btn></nuxt-link
+          >
+        </v-col>
+        <v-col cols="12" md="6">
+          <nuxt-link to="/videotheque">
+            <v-btn class="ma-5" color="primary"
+              >Voir la vidéothèque</v-btn
+            ></nuxt-link
+          >
         </v-col>
       </v-row>
-      -->
+
+      <v-row class="align-center d-flex justify-center">
+        <v-col cols="12">
+          <nuxt-link to="/">
+            <v-btn class="ma-5 button" color="primary"
+              >Retour à l'accueil</v-btn
+            ></nuxt-link
+          >
+        </v-col>
+      </v-row>
     </section>
   </div>
 </template>

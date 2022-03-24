@@ -1,9 +1,9 @@
 <template>
   <div fluid fill-height class="mt-5">
     <v-treeview activatable :items="items"></v-treeview>
-    <router-link to="/">
+    <nuxt-link to="/">
       <v-btn dark class="btn button ma-5" outlined>RETOUR à L'accueil</v-btn>
-    </router-link>
+    </nuxt-link>
   </div>
 </template>
 

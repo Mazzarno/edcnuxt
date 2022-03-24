@@ -31,6 +31,7 @@
             </v-card-actions>
           </v-card>
         </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </v-col>
   </v-container>
@@ -42,8 +43,29 @@ export default {
     return {
       videos: [],
       swiperOption: {
-        slidesPerView: 3,
-        spaceBetween: 30,
+        breakpoints: {
+          1500: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 1,
+          },
+          600: {
+            slidesPerView: 1,
+          },
+          500: {
+            slidesPerView: 1,
+          },
+          430: {
+            slidesPerView: 1,
+          },
+          300: {
+            slidesPerView: 1,
+          },
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,

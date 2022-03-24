@@ -198,13 +198,13 @@
           </v-row>
         </template> </v-img
     ></swiper-slide>
+    <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
-
 
 export default {
   name: 'swiper-example-multiple-slides-per-biew',
@@ -235,11 +235,19 @@ export default {
           },
           600: {
             slidesPerView: 3,
-            spaceBetween: 90,
+            spaceBetween: 50,
           },
-          320: {
+          500: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          430: {
             slidesPerView: 2,
-            spaceBetween: 90,
+            spaceBetween: 50,
+          },
+          300: {
+            slidesPerView: 2,
+            spaceBetween: 50,
           },
         },
         pagination: {

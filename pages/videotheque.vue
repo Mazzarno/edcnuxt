@@ -57,7 +57,7 @@
     <v-divider class="ma-4 primary"></v-divider>
     <v-row class="justify-center align-center">
       <v-col cols="12">
-        <h1 class="headline primary--text">Projet "En Roue Libre"</h1>
+        <h1 class="headline primary--text">Toutes les vidéos</h1>
       </v-col>
     </v-row>
     <VideosList
@@ -66,9 +66,9 @@
     ></VideosList>
 
     <v-row class="align-center my-5 d-flex justify-center">
-      <v-col cols="12" md="6" data-aos="zoom-in" data-aos-duration="2000">
-        <v-btn to="/videotheque" class="ma-5" color="primary"
-          >Voir toutes nos vidéos</v-btn
+      <v-col cols="12" md="6">
+        <nuxt-link to="/blog">
+          <v-btn class="ma-5" color="primary">Voir le blog</v-btn></nuxt-link
         >
       </v-col>
       <v-col cols="12" md="6">
@@ -78,7 +78,7 @@
           rel="noopener noreferrer"
           class="ma-5"
           color="primary"
-          >Voir sur Youtube
+          >Voir la chaine Youtube
           <v-icon class="ml-3">mdi-youtube</v-icon>
         </v-btn>
       </v-col>
@@ -86,8 +86,10 @@
 
     <v-row class="align-center d-flex justify-center">
       <v-col cols="12">
-        <v-btn to="/" class="ma-5 button" color="primary"
-          >Retour à l'accueil</v-btn
+        <nuxt-link to="/">
+          <v-btn class="ma-5 button" color="primary"
+            >Retour à l'accueil</v-btn
+          ></nuxt-link
         >
       </v-col>
     </v-row>
