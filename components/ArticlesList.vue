@@ -3,12 +3,13 @@
     <v-col cols="10">
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide v-for="article in articles.data" :key="article.id">
-          <v-card
+       <v-card
             class="ma-5 card-article"
             color="#fafaa5"
             max-height="570"
             min-width="200"
             max-width="400"
+          
           >
             <div class="primary">
               <v-list-item dark>
@@ -81,7 +82,8 @@
                 >
               </v-card-actions>
             </div>
-          </v-card></swiper-slide>
+          </v-card></swiper-slide
+        >
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </v-col>
@@ -94,19 +96,26 @@ export default {
   data() {
     return {
       api_url:
-        /*'http://localhost:1337' || */ 'https://edc-strapi.herokuapp.com',
+        /*'http://localhost:1337' || */ 'https://echappee-copro.fr/',
       articles: [],
       moment: moment,
       swiperOption: {
         breakpoints: {
           1500: {
             slidesPerView: 4,
+        
+          },
+          1300: {
+            slidesPerView: 3,
+      
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
+     
           },
           768: {
             slidesPerView: 2,
+   
           },
           600: {
             slidesPerView: 1,

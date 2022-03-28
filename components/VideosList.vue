@@ -14,7 +14,7 @@
               ></iframe>
             </div>
             <v-card-title class="primary justify-center">
-              <h1 class="subtitle-1 white--text text-decoration-underline">
+              <h1 class="body-1 white--text text-decoration-underline">
                 {{ video.attributes.name }}
               </h1>
             </v-card-title>
@@ -24,9 +24,9 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="mb-5 button primary--text"
-                >Voir sur youtube<v-icon color="primary" class="ml-3"
-                  >mdi-youtube</v-icon
-                ></v-btn
+                >Voir sur youtube<v-icon color="primary" class="ml-3">{{
+                  mdiYoutube
+                }}</v-icon></v-btn
               >
             </v-card-actions>
           </v-card>
@@ -37,18 +37,22 @@
   </v-container>
 </template>
 <script>
+import { mdiYoutube } from '@mdi/js'
 import videosQuery from '~/apollo/videos.gql'
 export default {
   data() {
     return {
+      mdiYoutube,
       videos: [],
       swiperOption: {
         breakpoints: {
           1500: {
             slidesPerView: 3,
+            spaceBetween: 90,
           },
           1024: {
             slidesPerView: 2,
+            spaceBetween: 90,
           },
           768: {
             slidesPerView: 1,

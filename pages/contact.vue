@@ -42,11 +42,12 @@
                         >L'ÉCHAPPÉE DES COPROPRIÉTÉS</v-list-item-title
                       >
                       <v-list-item-subtitle class="mt-3">
-                        <v-icon size="20">mdi-map-marker-radius</v-icon
-                        >&nbsp;Rue de la rue Toulouse,31000
+                        <v-icon size="20">{{ mdiMapMarkerRadius }}</v-icon
+                        >&nbsp;Toulouse - 31000
                       </v-list-item-subtitle>
                       <v-list-item-subtitle class="mt-3">
-                        <v-icon size="20">mdi-phone</v-icon>&nbsp;01.01.01.01.01
+                        <v-icon size="20">{{ mdiPhone }}</v-icon
+                        >&nbsp;01.01.01.01.01
                       </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
@@ -55,21 +56,21 @@
                     class="mt-3 d-flex justify-center align-center"
                   >
                     <a
-                      href="https://www.facebook.com/manon.leroy.7355"
+                      href="https://facebook.com/Lechappeedescoproprietes/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <v-btn class="mx-4" color="primary" icon>
-                        <v-icon size="24px">mdi-facebook</v-icon>
+                        <v-icon size="24px">{{ mdiFacebook }}</v-icon>
                       </v-btn>
                     </a>
                     <a
-                      href="https://www.linkedin.com/company/l-echappee-des-coproprietes?trk=public_profile_topcard_current_company"
+                      href="https://www.linkedin.com/company/l-echappee-des-coproprietes"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <v-btn class="mx-4" color="primary" icon>
-                        <v-icon size="24px">mdi-linkedin</v-icon>
+                        <v-icon size="24px">{{ mdiLinkedin }}</v-icon>
                       </v-btn>
                     </a>
                     <a
@@ -78,7 +79,7 @@
                       rel="noopener noreferrer"
                     >
                       <v-btn class="mx-4" color="primary" icon>
-                        <v-icon size="24px">mdi-youtube</v-icon>
+                        <v-icon size="24px">{{ mdiYoutube }}</v-icon>
                       </v-btn>
                     </a>
                   </v-card-actions>
@@ -102,7 +103,7 @@
                 >
                   <v-form
                     class="pa-5 justify-center align-center"
-                    action=" https://formsubmit.co/manon.leroy@echappee-copro.org"
+                    action="https://formsubmit.co/manon.leroy@echappee-copro.org"
                     method="POST"
                     v-model="form"
                   >
@@ -193,9 +194,21 @@
 </template>
 
 <script>
+import {
+  mdiFacebook,
+  mdiLinkedin,
+  mdiYoutube,
+  mdiPhone,
+  mdiMapMarkerRadius,
+} from '@mdi/js'
 export default {
   data() {
     return {
+      mdiMapMarkerRadius,
+      mdiPhone,
+      mdiFacebook,
+      mdiLinkedin,
+      mdiYoutube,
       form: false,
       rules: {
         name: [(val) => (val || '').length > 0 || 'Ce champ est obligatoire'],

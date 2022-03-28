@@ -7,7 +7,7 @@
       v-model="drawer"
       right
       app
-      stateless
+      temporary
     >
       <NuxtLink to="/">
         <v-img
@@ -184,7 +184,7 @@
           <v-col cols="12" xs="12" sm="12" md="4">
             <v-card-title class="primary d-flex justify-center">
               <a
-                href="https://www.facebook.com/manon.leroy.7355"
+                href="https://facebook.com/Lechappeedescoproprietes/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

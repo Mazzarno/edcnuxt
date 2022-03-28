@@ -49,7 +49,7 @@ export default {
   apollo: {  
   clientConfigs: {
     default: {
-      httpEndpoint: /*'http://localhost:1337'/graphql ||*/ 'https://edc-strapi.herokuapp.com/graphql',
+      httpEndpoint: /*'http://localhost:1337'/graphql ||*/ 'https://echappee-copro.fr/graphql',
     }
   }
   },
