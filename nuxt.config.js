@@ -31,8 +31,8 @@ export default {
      '~/assets/css/styles.css',
   ],
 
-  plugins: ['~/plugins/carousel'],
-
+  plugins: ['~/plugins/carousel',],
+  
   components: true,
 
   buildModules: [
@@ -42,6 +42,9 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/apollo',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-gtag',
   ],
 
   axios: {},
@@ -79,5 +82,87 @@ export default {
   
   },
   build: {
-  }
+  },
+ 'google-gtag':{
+   id: 'G-3746YCZWZT', // required
+   config:{
+     anonymize_ip: true, // anonymize IP 
+     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+     linker:{
+       domains:['echappee-copro.org','www.echappee-copro.org']
+     }
+   },
+   disableAutoPageTrack: false,
+  },
+    robots: {
+    UserAgent: '*',
+    Allow: '/',
+    UserAgent: 'Googlebot',
+    Allow: '/',
+    Sitemap: 'https://www.echappee-copro.org/sitemap.xml'
+  },
+  sitemap: {
+    hostname: 'https://www.echappee-copro.org',
+    Default: {
+    changefreq: 'daily',
+    priority: 1,
+    lastmod: new Date()
+     },
+    routes: [
+      {
+      url: '/',
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+      },
+      {
+      url: '/activites',
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date()
+      },
+      {
+      url: '/blog',
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date()
+      },
+      {
+      url: '/contact',
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date()
+      },
+      {
+      url: '/videotheque',
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date()
+      },
+      {
+      url: '/qui_sommes_nous',
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date()
+      },
+      {
+      url: '/vision',
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date()
+      },
+      {
+      url: '/mentions_legales',
+      changefreq: 'daily',
+      priority: 0.1,
+      lastmod: new Date()
+      },
+      {
+      url: '/plan_du_site',
+      changefreq: 'daily',
+      priority: 0.1,
+      lastmod: new Date()
+      }
+    ]
+  },
 }
