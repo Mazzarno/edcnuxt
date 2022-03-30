@@ -119,9 +119,11 @@
       </v-toolbar-items>
     </v-app-bar>
     <!-- MAIN -->
-    <v-main>
-      <Nuxt />
-    </v-main>
+    <transition name="fade" mode="out-in">
+      <v-main>
+        <Nuxt />
+      </v-main>
+    </transition>
     <!-- SNACKBAR ADD ITEM -->
     <v-snackbar v-model="snackbar">
       <template v-slot:action="{ attrs }">
@@ -258,7 +260,7 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 500)
     })
   },
-
+  transition: 'fade',
   data() {
     return {
       menuItems1: [
@@ -333,3 +335,13 @@ export default {
   },
 }
 </script>
+<style>
+.home-enter-active,
+.home-leave-active {
+  transition: opacity 0.5s;
+}
+.home-enter,
+.home-leave-active {
+  opacity: 0;
+}
+</style>

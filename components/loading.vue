@@ -416,6 +416,7 @@
   z-index: 1000;
   padding: 1rem;
   height: 100%;
+  opacity: 0.90;
   background: #ffffeb;
   width: 100%;
   text-align: center;
@@ -425,6 +426,156 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.logo_edc_load {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.spinner {
+  margin-top: 2em;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #ff8c00;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}
+#frontwheel,
+#backwheel {
+  animation: wheel 1s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#bike-girl {
+  animation: bike 2s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+#hair {
+  animation: hair 10s linear infinite alternate none;
+}
+#batiment {
+  animation: batiment 10s linear infinite normal none;
+}
+#cloud1,
+#cloud2 {
+  animation: cloud 3s linear infinite alternate none;
+}
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes bike {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(10deg);
+  }
+}
+
+@keyframes hair {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+
+  10% {
+    transform: rotate(0.2deg);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: rotate(-0.2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(0.2deg);
+  }
+
+  80% {
+    transform: rotate(-0.2deg);
+  }
+
+  90% {
+    transform: rotate(0.2deg);
+  }
+}
+@keyframes batiment {
+  0% {
+    transform: translateX(600px);
+  }
+
+  100% {
+    transform: translateX(-800px);
+  }
+}
+@keyframes cloud {
+  0% {
+    transform: translateX(0) translateY(-5px);
+  }
+
+  100% {
+    transform: translateX(-10px) translateY(-5px);
+  }
 }
 </style>
 <script>
