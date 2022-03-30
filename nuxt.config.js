@@ -30,6 +30,7 @@ export default {
   css: [
      '~/assets/css/styles.css',
   ],
+      loading: '~/components/loading.vue',
 
   plugins: ['~/plugins/carousel',],
   

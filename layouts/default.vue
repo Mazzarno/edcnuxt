@@ -252,6 +252,13 @@ import {
   mdiMenu,
 } from '@mdi/js'
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  },
+
   data() {
     return {
       menuItems1: [
@@ -269,6 +276,7 @@ export default {
         { title: 'Mentions légales', link: '/mentions_legales' },
         { title: 'Plan du site', link: '/plan_du_site' },
       ],
+      loading: false,
       message: '',
       snackbar: false,
       drawer: false,
@@ -325,4 +333,3 @@ export default {
   },
 }
 </script>
-
