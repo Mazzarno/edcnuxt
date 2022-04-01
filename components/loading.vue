@@ -416,7 +416,7 @@
   z-index: 1000;
   padding: 1rem;
   height: 100%;
-  opacity: 0.90;
+  opacity: 0.95;
   background: #ffffeb;
   width: 100%;
   text-align: center;
@@ -505,7 +505,7 @@
   animation: hair 10s linear infinite alternate none;
 }
 #batiment {
-  animation: batiment 10s linear infinite normal none;
+  animation: batiment 2s linear infinite normal none;
 }
 #cloud1,
 #cloud2 {

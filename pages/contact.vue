@@ -15,7 +15,7 @@
     <section>
       <v-row class="justify-center align-center mt-5">
         <v-col cols="12" class="d-flex justify-center align-center">
-          <h1 class="headline primary--text">NOUS CONTACTER</h1>
+          <h1 class="headline primary--text">NOUS CONTACTEZ</h1>
         </v-col>
       </v-row>
       <v-row class="d-flex justify-center align-center mb-7">
