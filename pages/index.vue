@@ -338,7 +338,7 @@
 
       <VideosList
         class="mb-5"
-        :videos="playlists.data[0].attributes.videos || []"
+        :videos="playlists.data[2].attributes.videos || []"
       ></VideosList>
 
       <v-row class="align-center my-5 d-flex justify-center">

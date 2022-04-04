@@ -107,8 +107,8 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-title>
-        <h3 class="titleHeader heading-4 hidden-sm-and-down">
-          Faciliter les projets collectifs en copropriété
+        <h3 class="titleHeader headline hidden-sm-and-down pb-2">
+          Faciliter les projets collectifs en copropriété.
         </h3>
       </v-toolbar-title>
       <v-spacer></v-spacer>

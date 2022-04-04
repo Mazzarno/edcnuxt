@@ -8,7 +8,7 @@
     <v-row class="justify-center align-center">
       <v-col cols="12">
         <h1 class="headline primary--text">
-          Les {{ categories.data[0].attributes.name }}
+          Les {{ categories.data[1].attributes.name }}
         </h1>
       </v-col>
     </v-row>
@@ -23,7 +23,7 @@
     </v-row>
 
     <ArticlesList
-      :articles="categories.data[1].attributes.articles || []"
+      :articles="categories.data[0].attributes.articles || []"
     ></ArticlesList>
 
     <v-row class="align-center my-5 d-flex justify-center">
