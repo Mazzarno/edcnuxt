@@ -60,7 +60,6 @@ export default {
   
   vuetify: {
     customVariables: ['~/assets/css/styles.scss'],
-    treeShake: true,
       defaultAssets: false,
   icons: {
     iconfont: 'mdi',
@@ -80,10 +79,22 @@ export default {
         },
       }
     }
-  
   },
   build: {
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
   },
+
  'google-gtag':{
    id: 'G-3746YCZWZT', // required
    config:{
